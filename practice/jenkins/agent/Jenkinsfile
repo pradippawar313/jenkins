@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('BUILD') {
             steps {
-                '''
+                sh '''
                 pwd 
                 sleep 5
                 echo This is first stage: BUILD
@@ -12,7 +12,7 @@ pipeline {
         } 
         stage('TEST') {
             steps {
-                '''
+                sh '''
                 pwd 
                 sleep 5
                 echo This is second stage: TEST
@@ -20,8 +20,8 @@ pipeline {
             }
         } 
         stage('DEPLOY') {
-           steps {
-                '''
+           steps { 
+                sh '''
                 pwd 
                 sleep 5
                 echo This is third stage: DEPLOY
