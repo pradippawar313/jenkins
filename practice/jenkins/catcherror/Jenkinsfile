@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+    stages {
+        stage('stageName1') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'exit 1'
+                }
+            }
+        }
+        stage('stageName2') {
+            steps {
+                echo "STAGE 2"
+            }
+        }
+        stage('stageName3') {
+            steps {
+                echo "STAGE 3"
+            }
+        }
+    }    
+}
+
+pipeline {
+    agent any
+    stages {
+        stage('StageName1'){
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'exit 1'
+                }
+            }
+        }
+        stage('StageName2') {
+            steps {
+                echo "Stage 2"
+            }
+        }
+        stage('StageName3') {
+            steps {
+                echo "Stage 3"
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any 
+    stages {
+        stage ('StageName 1') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageRessult: 'FAILURE') {
+                    sh 'exit 1'
+                }
+                
+            }
+        } 
+        stage ('StageName 2') {
+            steps {
+                echo "Stage 2"
+            }
+        }
+        stage ('StageName 3') {
+            steps {
+                echo "Stage 3"
+            }
+        }
+    }
+}

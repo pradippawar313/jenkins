@@ -1,0 +1,24 @@
+# installing packages separately
+-name: Installing git
+ apt:
+    name: git
+    update_cache: yes
+-name: Installing nginx
+ apt:
+    name: nginx
+    update_cache: yes
+-name: Installing memcached
+ apt:
+    name: memcached
+    update_cache: yes
+
+---
+# installing packages in one task
+-name: Installing packages with one task
+ apt:
+    name: "{{ item }}"
+    update_cache: yes
+ with_items:
+    - git
+    - nginx
+    - memcached

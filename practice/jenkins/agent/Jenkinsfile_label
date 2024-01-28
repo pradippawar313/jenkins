@@ -1,0 +1,68 @@
+pipeline {
+    agent { label 'master' } 
+    stages {
+        stage('BUILD') {
+            steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is first stage: BUILD
+                '''
+            }
+        } 
+        stage('TEST') {
+            steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is second stage: TEST
+                '''
+            }
+        } 
+        stage('DEPLOY') {
+           steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is third stage: DEPLOY
+                '''
+            }
+        } 
+    }    
+}
+
+pipeline {
+    agent { label 'master' } 
+    stages {
+        stage('BUILD') {
+            steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is first stage: BUILD
+                '''
+            }
+            
+            
+        } 
+        stage('TEST') {
+            steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is second stage: TEST
+                '''
+            }
+        } 
+        stage('DEPLOY') {
+           steps {
+                '''
+                pwd 
+                sleep 5
+                echo This is third stage: DEPLOY
+                '''
+            }
+        } 
+    }
+    
+}

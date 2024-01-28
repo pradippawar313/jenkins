@@ -1,0 +1,27 @@
+pipelie {
+    agent any 
+    triggers {
+        cron('H/15 * * * *')
+    }
+    stages {
+        stage('practice') {
+            steps {
+                echo "Hello world"
+            }
+        } 
+    }
+}
+
+pipeline {
+    agent any 
+    triggers {
+        cron('H/15 * * * *')
+    }
+    stages {
+        stage('practice') {
+            steps {
+                echo "Hello World"
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+---
+- hosts: web
+tasks:
+  - name: Initiating database
+    script: initialize_wp_database.sh
+    run_once: true
+    
